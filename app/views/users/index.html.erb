@@ -1,1 +1,25 @@
-List of users
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <ul class="list-unstyled">
+    <% @users.each do |u| %> 
+      <% if u.profile %>
+        <li>
+          <div class="well row <%= cycle('white-bg', '') %>">
+            <div class="col-sm-4 text center">
+              <% if u.profile.avatar %>
+                <%= link_to u do %>
+                  <%= image_tag u.profile.avatar.url(:thumb), class: 'avatar-block' %>
+                <% end %>
+              <% end %>
+            </div>
+            <div>
+              <h1><%= u.profile.first_name %> <%= u.profile.last_name %></h1>
+              <h3><span class="job-title-icon"><%= job_title_icon(u.profile.job_title) %></span> <%= u.profile.job_title %></h3>
+            </div>
+          </div>
+        </li>
+      <% end %>
+    <% end %>
+    </ul>
+  </div>
+</div>
