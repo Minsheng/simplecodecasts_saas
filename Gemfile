@@ -41,9 +41,10 @@ gem 'devise', '3.4.1'
 gem 'stripe', '1.16.1'
 # Use figaro to hide secret keys
 gem 'figaro', '1.0.0'
-
 # Use paperclip for image uploads
 gem 'paperclip', '4.2.1'
+# Use autoprefixer to parse CSS and add vender prefixes to CSS rules
+gem "autoprefixer-rails"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
