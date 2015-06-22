@@ -13,8 +13,16 @@
               <% end %>
             </div>
             <div>
-              <h1><%= u.profile.first_name %> <%= u.profile.last_name %></h1>
-              <h3><span class="job-title-icon"><%= job_title_icon(u.profile.job_title) %></span> <%= u.profile.job_title %></h3>
+              <%= link_to u do %>
+                <h2><%= u.profile.first_name %> <%= u.profile.last_name %></h2>
+              <% end %>
+              <h3>
+                <span class="job-title-icon"><%= job_title_icon(u.profile.job_title) %></span>
+                <%= u.profile.job_title %>
+                <% if u.plan_id == 2 %>
+                  <span class="label label-danger">PRO</span>
+                <% end %>
+              </h3>
             </div>
           </div>
         </li>
